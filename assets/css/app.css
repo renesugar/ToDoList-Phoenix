@@ -2,3 +2,19 @@
 .alert:empty {
     display: none;
 }
+
+.btn-circle {
+    width: 30px !important;
+    height: 30px !important;
+
+    text-align: center !important;
+
+    padding: 6px 0 !important;
+    border-radius: 15px !important;
+    
+    font-size: 20px !important;
+    line-height: 16px !important;
+
+    margin-right: 6px;
+}
+.btn-default.btn-circle { border: gray solid 2px; }

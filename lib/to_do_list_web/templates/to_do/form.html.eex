@@ -11,13 +11,7 @@
     <%= error_tag f, :description %>
   </div>
 
-  <div class="form-group">
-    <%= label f, :isFinished, class: "control-label" %>
-    <%= checkbox f, :isFinished, class: "form-control" %>
-    <%= error_tag f, :isFinished %>
-  </div>
-
-  <div class="form-group">
+  <div class="form-group text-right">
     <%= submit "Submit", class: "btn btn-primary" %>
   </div>
 <% end %>

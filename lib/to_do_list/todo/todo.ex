@@ -21,6 +21,13 @@ defmodule ToDoList.ToDo do
         Repo.all(Task)
     end
 
+    @doc false
+    def list_tasks_ordered() do
+        Task
+        |> order_by(desc: :inserted_at)
+        |> Repo.all()
+    end
+
     @doc """
     Gets a single task.
 

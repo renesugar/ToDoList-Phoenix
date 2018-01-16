@@ -5,7 +5,7 @@ defmodule ToDoListWeb.ToDoController do
     alias ToDoList.ToDo.Task
 
     def index(conn, _params) do
-        tasks = ToDo.list_tasks()
+        tasks = ToDo.list_tasks_ordered()
         render(conn, "index.html", tasks: tasks)
     end
 
@@ -50,7 +50,6 @@ defmodule ToDoListWeb.ToDoController do
         case ToDo.update_task(task, %{isFinished: !task.isFinished}) do
             {:ok, _task} ->
                 conn
-                |> put_flash(:info, "Task now check.")
                 |> redirect(to: to_do_path(conn, :index))
             {:error, %Ecto.Changeset{} = changeset} ->
                 render(conn, "index.html", task: task, changeset: changeset)
